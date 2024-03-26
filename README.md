@@ -2,3 +2,5 @@
 Prototype shows the feasability of using AI models to assist users in their exercises
 Pushup Counter and Bicep curl counter using Tensorflow Movenet model
 built on top of shamjam
+
+try it here: https://matthiasljk.github.io/DBTT/
