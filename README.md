@@ -1,4 +1,4 @@
-# Push Up Counter
-A push up counter created using MoveNet.js
-
-YouTube link: https://www.youtube.com/watch?v=EL0eHokSSJk&lc
+# Push Up & Bicep Curl Counter
+Prototype shows the feasability of using AI models to assist users in their exercises
+Pushup Counter and Bicep curl counter using Tensorflow Movenet model
+built on top of shamjam
