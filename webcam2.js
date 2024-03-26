@@ -118,10 +118,7 @@ function drawKeypoints() {
         //console.log('Not fully visible!');
       }
       updateArmAngle();
-      updateBackAngle();
-      // inUpPosition();
       inReadyPosition();
-      // inDownPosition();
       inCurlPosition();
     }
   }
@@ -163,11 +160,6 @@ function drawSkeleton() {
 }
 
 function updateArmAngle() {
-  /*
-  rightWrist = poses[0].keypoints[10];
-  rightShoulder = poses[0].keypoints[6];
-  rightElbow = poses[0].keypoints[8];
-  */
   leftWrist = poses[0].keypoints[9];
   leftShoulder = poses[0].keypoints[5];
   leftElbow = poses[0].keypoints[7];
@@ -193,31 +185,6 @@ function updateArmAngle() {
   }
 }
 
-function updateBackAngle() {
-  var leftShoulder = poses[0].keypoints[5];
-  var leftHip = poses[0].keypoints[11];
-  var leftKnee = poses[0].keypoints[13];
-
-  angle =
-    (Math.atan2(leftKnee.y - leftHip.y, leftKnee.x - leftHip.x) -
-      Math.atan2(leftShoulder.y - leftHip.y, leftShoulder.x - leftHip.x)) *
-    (180 / Math.PI);
-  angle = angle % 180;
-  if (leftKnee.score > 0.3 && leftHip.score > 0.3 && leftShoulder.score > 0.3) {
-    backAngle = angle;
-  }
-
-  if (backAngle < 20 || backAngle > 160) {
-    highlightBack = false;
-  } else {
-    highlightBack = true;
-    if (backWarningGiven != true) {
-      var msg = new SpeechSynthesisUtterance("Keep your back straight");
-      window.speechSynthesis.speak(msg);
-      backWarningGiven = true;
-    }
-  }
-}
 
 function inReadyPosition() {
   // console.log(curlReady, elbowAngle);

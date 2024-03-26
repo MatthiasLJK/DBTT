@@ -44,9 +44,9 @@ async function videoReady() {
 async function setup() {
   var msg = new SpeechSynthesisUtterance("Loading, please wait...");
   window.speechSynthesis.speak(msg);
-  createCanvas(640, 480);
+  createCanvas(648, 300)
   video = createCapture(VIDEO, videoReady);
-  //video.size(960, 720);
+  // video.size(884, 390);
   video.hide();
 
   await init();
